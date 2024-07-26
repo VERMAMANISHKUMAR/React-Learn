@@ -4,9 +4,11 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>JS - IN - JSX</title>
+  <link rel="stylesheet" href="style.css">
   <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
   <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
   <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+
 </head>
 <body>
   <div id="root"></div>
@@ -14,16 +16,27 @@
   <script type="text/babel">
     const App = () => {
       const name = "Manish Kumar Verma";
+      const phoneNumber = "8521837619";
+      const email = "manishkumarverma@gmail.com";
       const age = 24;
-      const hobby = "JavaScript";
       const isMarried = false;
-
+      const hobby = "Full Stack Web Developer";
+      const Address="Rastra Nagar Rarha";
+      const PostOffice = "Rastra Nagar Rarha";
+      const Pincode = "804451";
+      const District = "Patna";
+      const State = "Bihar";
+      
       return (
         <div>
           <h1>Hello, my name is {name}</h1>
+          <h2>My phone number is {phoneNumber}</h2>
+          <h3>My email is {email}</h3>
           <h2>I am {age} years old</h2>
-          <h3>I love {hobby}</h3>
           <h4>I am {isMarried ? "Married" : "Not Married"}</h4>
+          <h2>My address is:</h2>       
+          <p>Address: {Address}, Post Office: {PostOffice}, Pincode: {Pincode}, District: {District}, State: {State}</p>
+          
         </div>
       );
     };
