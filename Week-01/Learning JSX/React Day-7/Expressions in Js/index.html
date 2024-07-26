@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+          <meta charset="UTF-8">
+          <meta name="viewport" content="width=device-width, initial-scale=1.0">
+          <title>Expressions in js</title>
+          <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+  <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+  <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+
+</head>
+<body>
+          <h1 id="root"></h1>
+
+          <script type="text/babel">
+                 function sum(){
+                    let a=10+20;
+                    return 'sum'
+                 }
+                 const header = <h2>JSX Expressions</h2>
+                 function App(){
+                    var name="manish kumar verma";
+                    var age=24;
+                    let demo=null;
+                    let undef;
+                    const bool=true;
+                    return(
+                    <>
+                    <h1>Javascript insite jsx</h1>
+                    <header>{header}</header>
+                    <p>String:{name}</p>
+                    <p>Number:{age}</p>
+                    <p>Boolean:{bool? 'true' : 'false'}</p>
+                    <p>Null:{demo}</p>
+                    <p>Undefined:{undef}</p>
+                    <p>Function Call:{sum()}</p>
+                    <p>Expression: {10+20}</p>
+                    </>
+                    )
+                 }
+                 ReactDOM.render(<App />, document.getElementById('root'));
+          </script>
+          
+</body>
+</html>
