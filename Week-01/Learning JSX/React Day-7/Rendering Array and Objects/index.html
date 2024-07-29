@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Array and Object in JavaScript</title>
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+</head>
+<body>
+    <div id="root"></div>
+
+    <script type="text/babel">
+        // Array and Object
+        function ArrayApp() {
+            const arr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 89];
+            const obj = {
+                name: "Alexa",
+                Age: 24
+            };
+            return (
+                <div>
+                    <h1>Array and Object in JavaScript</h1>
+                    {arr.map((item, index) => <h2 key={index}>{item}</h2>)}
+                    <h2>{obj.name} is {obj.Age} years old</h2>
+                </div>
+            );
+        }
+        
+        const rootElement = ReactDOM.createRoot(document.getElementById("root"));
+        rootElement.render(<ArrayApp />);
+    </script>
+    
+</body>
+</html>
