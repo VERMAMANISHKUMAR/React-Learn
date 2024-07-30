@@ -13,23 +13,24 @@
 
     <script type="text/babel">
         // Array and Object
-        function ArrayApp() {
-            const arr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 89];
-            const obj = {
-                name: "Alexa",
-                Age: 24
-            };
-            return (
-                <div>
-                    <h1>Array and Object in JavaScript</h1>
-                    {arr.map((item, index) => <h2 key={index}>{item}</h2>)}
-                    <h2>{obj.name} is {obj.Age} years old</h2>
-                </div>
-            );
+        function App() {
+           let cars=["BMW","VW", "audi","Nexsa","maruti","honda"]
+            
+           return(
+             <div>
+                 <h1>List of Car</h1>
+                 <ul>
+                     {cars.map(car => (
+                         <li key={car}>{car}</li>
+                     ))}
+                 </ul>
+             </div>
+            )
+           
         }
         
         const rootElement = ReactDOM.createRoot(document.getElementById("root"));
-        rootElement.render(<ArrayApp />);
+        rootElement.render(<App />);
     </script>
     
 </body>
