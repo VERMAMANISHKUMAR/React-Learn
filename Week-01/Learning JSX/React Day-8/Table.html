@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <!-- <link rel="stylesheet" href="style.css"> -->
+    <title>Students Information</title>
+</head>
+<body>
+    <div id="root"></div>
+
+    <script type="text/babel">
+    const students=[
+      {id:1,name:'Sohan kumar',Age:20,fatherName:'Dhanesh',Passing_Years:2020,grate:95,},
+      {id:2,name:'Mohan kumar',Age:15,fatherName:'Upendar',Passing_Years:2019,grate:86,},
+      {id:3,name:'Ramesh kumar',Age:18,fatherName:'Ravi kumar',Passing_Years:2012,grate:88,},
+      {id:4,name:'Roushan kumar',Age:21,fatherName:'Ramdhir kumar',Passing_Years:2022,grate:95,},
+      {id:5,name:'Manoj kumar',Age:22,fatherName:'Binod kumar',Passing_Years:2023,grate:75,},
+      {id:6,name:'Priyanka kumar',Age:17,fatherName:'Priya kumar',Passing_Years:2018,grate:90,},
+      {id:7,name:'Shobha kumar',Age:23,fatherName:'Shobha kumar',Passing_Years:2017,grate:93,},
+      {id:8,name:'Rajesh kumar',Age:19,fatherName:'Rajesh kumar',Passing_Years:2014,grate:80,},
+      {id:9,name:'Vishal kumar',Age:24,fatherName:'Vishal kumar',Passing_Years:2016,grate:92,},
+      {id:10,name:'Nayan kumar',Age:25,fatherName:'Nayan kumar',Passing_Years:2015,grate:85,},
+      
+    ]
+    const App =()=>{
+      return(
+          <div>
+        <h1>Students Information in the table</h1>
+        <table border='1'>
+       <thead>
+          <tr>
+             <th>ID</th>
+             <th>Name</th>
+             <th>Age</th>
+             <th>Father's Name</th>
+             <th>Passing Year</th>
+             <th>Grate</th>
+          </tr>
+        </thead>
+          <tbody>
+                 {
+                    students.map(students=>(
+                               <tr key={students.id}>
+                                   <td>{students.id}</td>
+                                   <td>{students.name}</td>
+                                   <td>{students.Age}</td>
+                                   <td>{students.fatherName}</td>
+                                   <td>{students.Passing_Years}</td>
+                                   <td>{students.grate}</td>
+                               </tr>
+                    ))
+                 }   
+          </tbody> 
+       
+        </table>
+          </div>
+      )
+    }
+    const rootElement = document.getElementById('root');
+    ReactDOM.createRoot(rootElement).render(<App />);
+    </script>
+</body>
+</html>
