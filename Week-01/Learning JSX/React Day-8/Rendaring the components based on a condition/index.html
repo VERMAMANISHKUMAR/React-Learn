@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+  <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+  <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+  <title>Car Page</title>
+  <style>
+          body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+          }
+          table {
+            width: 100%;
+            border-collapse: collapse;
+          }
+          th, td {
+            padding: 10px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+          }
+          th {
+            background-color: #f4f4f4;
+          }
+          tr:hover {
+            background-color: #f1f1f1;
+          }
+          img {
+            max-width: 100px;
+            height: auto;
+          }
+        </style>
+</head>
+<body>
+<div id="root"></div>
+
+<script type="text/babel">
+  function CarPage() {
+    let carpage = [
+      {
+        make: "Toyota",
+        model: "Camry",
+        year: 2021,
+        color: "White",
+        mileage: 14.2,
+        Fuel_Type: 'Petrol',
+        On_Road_Price: 4764000,
+        img: "https://imgd.aeplcdn.com/370x208/n/cw/ec/139739/land-cruiser-exterior-right-front-three-quarter-2.jpeg?isig=0&q=80"
+      },
+      {
+        make: "BMW",
+        model: "Camry",
+        year: 2022,
+        color: "Green",
+        mileage: 15.2,
+        Fuel_Type: 'Petrol',
+        On_Road_Price: 8642000,
+        img: "https://imgd.aeplcdn.com/227x128/n/cw/ec/175183/new-5-series-exterior-right-front-three-quarter.jpeg?isig=0&q=80"
+      },
+      {
+        make: "Bentley",
+        model: "Camry",
+        year: 2023,
+        color: "White",
+        mileage: 6.8,
+        Fuel_Type: 'Petrol',
+        On_Road_Price: 40400000,
+        img: "https://imgd.aeplcdn.com/370x208/ec/d2/36/9774/img/m/Bentley-Continental-GT-Right-Front-Three-Quarter-52653_ol.jpg?v=201711021421&q=80"
+      },
+      {
+        make: "Audi",
+        model: "Camry",
+        year: 2024,
+        color: "Black",
+        mileage: 6.8,
+        Fuel_Type: 'Petrol',
+        On_Road_Price: 6506000,
+        img: "https://imgd.aeplcdn.com/664x374/n/cw/ec/141373/q3-sportback-exterior-right-front-three-quarter-2.jpeg?isig=0&q=80"
+      },
+      {
+        make: "Land Rover",
+        model: "Camry",
+        year: 2024,
+        color: "Black",
+        mileage: 6.8,
+        Fuel_Type: 'Petrol',
+        On_Road_Price: 30300000,
+        img: "https://images.91wheels.com/assets/b_images/main/models/profile/profile1661771557.jpg?width=420&q=60?w=420&q=60"
+      }
+    ];
+
+    return (
+          <>
+          <h1>Car Details</h1>
+      <table border="3">
+        <thead >
+          <tr>
+            <th>Make</th>
+            <th>Model</th>
+            <th>Year</th>
+            <th>Color</th>
+            <th>Mileage</th>
+            <th>Fuel Type</th>
+            <th>On Road Price</th>
+            <th>Image</th>
+          </tr>
+        </thead>
+      
+          {carpage.map((car, index) => (
+            <tr key={index}>
+              <td>{car.make}</td>
+              <td>{car.model}</td>
+              <td>{car.year}</td>
+              <td>{car.color}</td>
+              <td>{car.mileage}</td>
+              <td>{car.Fuel_Type}</td>
+              <td>{car.On_Road_Price}</td>
+              <td><img src={car.img} alt={car.model} style={{ width: '100px' }} /></td>
+            </tr>
+          ))}
+        
+      </table>
+      </>
+    );
+    
+  }
+  
+  const rootElement = ReactDOM.createRoot(document.getElementById("root"));
+  rootElement.render(<CarPage />);
+</script>
+
+</body>
+</html>
