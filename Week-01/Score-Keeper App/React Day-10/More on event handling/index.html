@@ -27,11 +27,11 @@
                     console.log(score);
                     rootElement.render(<App />);                                                                                                                                                                                                                                                                                                                                                       
                     }
-                    // function addTwo(){
-                    // score += 2;
-                    // console.log(score);
-                    // rootElement.render(<App />);                                                                                                                                                                                                                                                                                                                                                       
-                    // }
+                    function addTwo(){
+                    score += 2;
+                    console.log(score);
+                    rootElement.render(<App />);                                                                                                                                                                                                                                                                                                                                                       
+                    }
                     // function addThree(){
                     // score += 3;
                     // console.log(score);
@@ -56,6 +56,7 @@
                      score=num;
                      rootElement.render(<App />);
                     }
+                   
       const  App= () =>(
           <>
           <h1>SCORE KEEPER</h1>
@@ -63,12 +64,12 @@
          
       <div>
   <button onClick={addOne}>1</button>
-  <button onClick={()=>{addScore(2)}}>2</button>
+  <button onClick={addTwo}>2</button>
   <button onClick={()=>{addScore(3)}}>3</button>
   <button onClick={()=>{addScore(4)}}>4</button>
   <button onClick={()=>{addScore(5)}}>5</button>
   <button onClick={()=>{addScore(6)}}>6</button>
-  <button>Weket</button>
+  <button>Wicket</button>
  
           </div>
 
