@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <link rel="stylesheet" href="style.css">
+    <title>My Timetable</title>
+</head>
+<body>
+    <div id="root"></div>
+    <script type="text/babel">
+        const timeTable = {
+            Monday: {
+                9: { subject: 'Node.js', time: '10:00 AM to 12:00 PM' },
+                10: { subject: 'Break', time: '12:00 PM to 12:30 PM' },
+                11: { subject: 'JavaScript And React', time: '12:30 PM to 3:00 PM' },
+                12: { subject: 'DSA', time: '3:30 PM to 5:00 PM' },
+                13: { subject: 'Break', time: '5:00 PM to 5:30 PM' },
+                14: { subject: 'React', time: '6:00 PM to 9:00 PM' },
+                15: { subject: 'Break', time: '9:00 PM to 9:30 PM' },
+                16: { subject: 'Be10X AI Tool', time: '9:30 PM to 10:30 PM' },
+                17: { subject: 'AI Tool for Developer', time: '10:30 PM to 11:30 PM' },
+                18: { subject: 'Project MEN', time: '12:00 PM to 1:00 AM' },
+                19: { subject: 'Project HCBTJR', time: '1:00 AM to 2:30 AM' },
+            },
+            // Similar entries for other days...
+            Tuesday: {
+                9: { subject: 'Node.js', time: '10:00 AM to 12:00 PM' },
+                10: { subject: 'Break', time: '12:00 PM to 12:30 PM' },
+                11: { subject: 'JavaScript And React', time: '12:30 PM to 3:00 PM' },
+                12: { subject: 'DSA', time: '3:30 PM to 5:00 PM' },
+                13: { subject: 'Break', time: '5:00 PM to 5:30 PM' },
+                14: { subject: 'React', time: '6:00 PM to 9:00 PM' },
+                15: { subject: 'Break', time: '9:00 PM to 9:30 PM' },
+                16: { subject: 'Be10X AI Tool', time: '9:30 PM to 10:30 PM' },
+                17: { subject: 'AI Tool for Developer', time: '10:30 PM to 11:30 PM' },
+                18: { subject: 'Project MEN', time: '12:00 PM to 1:00 AM' },
+                19: { subject: 'Project HCBTJR', time: '1:00 AM to 2:30 AM' },
+            },
+            Wednesday: {
+                9: { subject: 'Node.js', time: '10:00 AM to 12:00 PM' },
+                10: { subject: 'Break', time: '12:00 PM to 12:30 PM' },
+                11: { subject: 'JavaScript And React', time: '12:30 PM to 3:00 PM' },
+                12: { subject: 'DSA', time: '3:30 PM to 5:00 PM' },
+                13: { subject: 'Break', time: '5:00 PM to 5:30 PM' },
+                14: { subject: 'React', time: '6:00 PM to 9:00 PM' },
+                15: { subject: 'Break', time: '9:00 PM to 9:30 PM' },
+                16: { subject: 'Be10X AI Tool', time: '9:30 PM to 10:30 PM' },
+                17: { subject: 'AI Tool for Developer', time: '10:30 PM to 11:30 PM' },
+                18: { subject: 'Project MEN', time: '12:00 PM to 1:00 AM' },
+                19: { subject: 'Project HCBTJR', time: '1:00 AM to 2:30 AM' },
+            },
+            Thursday: {
+                9: { subject: 'Node.js', time: '10:00 AM to 12:00 PM' },
+                10: { subject: 'Break', time: '12:00 PM to 12:30 PM' },
+                11: { subject: 'JavaScript And React', time: '12:30 PM to 3:00 PM' },
+                12: { subject: 'DSA', time: '3:30 PM to 5:00 PM' },
+                13: { subject: 'Break', time: '5:00 PM to 5:30 PM' },
+                14: { subject: 'React', time: '6:00 PM to 9:00 PM' },
+                15: { subject: 'Break', time: '9:00 PM to 9:30 PM' },
+                16: { subject: 'Be10X AI Tool', time: '9:30 PM to 10:30 PM' },
+                17: { subject: 'AI Tool for Developer', time: '10:30 PM to 11:30 PM' },
+                18: { subject: 'Project MEN', time: '12:00 PM to 1:00 AM' },
+                19: { subject: 'Project HCBTJR', time: '1:00 AM to 2:30 AM' },
+            },
+            Friday: {
+                9: { subject: 'Node.js', time: '10:00 AM to 12:00 PM' },
+                10: { subject: 'Break', time: '12:00 PM to 12:30 PM' },
+                11: { subject: 'JavaScript And React', time: '12:30 PM to 3:00 PM' },
+                12: { subject: 'DSA', time: '3:30 PM to 5:00 PM' },
+                13: { subject: 'Break', time: '5:00 PM to 5:30 PM' },
+                14: { subject: 'React', time: '6:00 PM to 9:00 PM' },
+                15: { subject: 'Break', time: '9:00 PM to 9:30 PM' },
+                16: { subject: 'Be10X AI Tool', time: '9:30 PM to 10:30 PM' },
+                17: { subject: 'AI Tool for Developer', time: '10:30 PM to 11:30 PM' },
+                18: { subject: 'Project MEN', time: '12:00 PM to 1:00 AM' },
+                19: { subject: 'Project HCBTJR', time: '1:00 AM to 2:30 AM' },
+            },
+            Saturday: {
+                9: { subject: 'Node.js', time: '10:00 AM to 12:00 PM' },
+                10: { subject: 'Break', time: '12:00 PM to 12:30 PM' },
+                11: { subject: 'JavaScript And React', time: '12:30 PM to 3:00 PM' },
+                12: { subject: 'DSA', time: '3:30 PM to 5:00 PM' },
+                13: { subject: 'Break', time: '5:00 PM to 5:30 PM' },
+                14: { subject: 'React', time: '6:00 PM to 9:00 PM' },
+                15: { subject: 'Break', time: '9:00 PM to 9:30 PM' },
+                16: { subject: 'Be10X AI Tool', time: '9:30 PM to 10:30 PM' },
+                17: { subject: 'AI Tool for Developer', time: '10:30 PM to 11:30 PM' },
+                18: { subject: 'Project MEN', time: '12:00 PM to 1:00 AM' },
+                19: { subject: 'Project HCBTJR', time: '1:00 AM to 2:30 AM' },
+            },
+            Sunday: {
+                9: { subject: 'Node.js', time: '10:00 AM to 12:00 PM' },
+                10: { subject: 'Break', time: '12:00 PM to 12:30 PM' },
+                11: { subject: 'JavaScript And React', time: '12:30 PM to 3:00 PM' },
+                12: { subject: 'DSA', time: '3:30 PM to 5:00 PM' },
+                13: { subject: 'Break', time: '5:00 PM to 5:30 PM' },
+                14: { subject: 'React', time: '6:00 PM to 9:00 PM' },
+                15: { subject: 'Break', time: '9:00 PM to 9:30 PM' },
+                16: { subject: 'Be10X AI Tool', time: '9:30 PM to 10:30 PM' },
+                17: { subject: 'AI Tool for Developer', time: '10:30 PM to 11:30 PM' },
+                18: { subject: 'Project MEN', time: '12:00 PM to 1:00 AM' },
+                19: { subject: 'Project HCBTJR', time: '1:00 AM to 2:30 AM' },
+            },
+        };
+
+        const days = Object.keys(timeTable);
+
+        const App = () => (
+            <table border="1">
+                <caption>Study Timetable</caption>
+                <thead>
+                    <tr>
+                        <th>Day</th>
+                        <th>10:00 AM to 12:00 PM</th>
+                        <th>12:00 PM to 12:30 PM</th>
+                        <th>12:30 PM to 3:00 PM</th>
+                        <th>3:30 PM to 5:00 PM</th>
+                        <th>5:00 PM to 5:30 PM</th>
+                        <th>6:00 PM to 9:00 PM</th>
+                        <th>9:00 PM to 9:30 PM</th>
+                        <th>9:30 PM to 10:30 PM</th>
+                        <th>10:30 PM to 11:30 PM</th>
+                        <th>12:00 PM to 1:00 AM</th>
+                        <th>1:00 AM to 2:30 AM</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {days.map((day, index) => (
+                        <tr key={index}>
+                            <td>{day}</td>
+                            {Object.keys(timeTable[day]).map((slot, i) => (
+                                <td key={i}>{timeTable[day][slot].subject}</td>
+                            ))}
+                        </tr>
+                    ))}
+                </tbody>
+            </table>
+        );
+
+        ReactDOM.createRoot(document.getElementById('root')).render(<App />);
+    </script>
+</body>
+</html>
