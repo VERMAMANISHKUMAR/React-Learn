@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script
+      crossorigin
+      src="https://unpkg.com/react@18/umd/react.development.js"
+    ></script>
+    <script
+      crossorigin
+      src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"
+    ></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <title>Score Keeper App</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+        #root {
+            margin-top: 50px;
+        }
+        button {
+            margin: 5px;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            background-color: #007BFF;
+            color: white;
+            border: none;
+            border-radius: 5px;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+        h1 {
+            color: #333;
+        }
+        h2 {
+            color: #555;
+        }
+        form {
+            margin-top: 20px;
+        }
+        input[type="text"] {
+            padding: 10px;
+            font-size: 16px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            margin-right: 10px;
+        }
+        input {
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            background-color: #007BFF;
+            color: white;
+            border: none;
+            border-radius: 5px;
+        }
+        input:hover {
+            background-color: #218838;
+        }
+        .result span {
+            font-size: 18px;
+        }
+    </style>
+</head>
+<body>
+    <div id="root"></div>
+    
+    <script type="text/babel">
+        const { useState } = React;
+
+        let score = 0;
+        let wicket = 0;
+        let ballwiseRes = [];
+        let hit = '';
+
+        function addScore(num) {
+            hit = num;
+            rootElement.render(<App />);
+        }
+
+        function addWicket() {
+            hit = 'W';
+            rootElement.render(<App />);
+        }
+
+        const ScoreButton = () => (
+            <div>
+                <button onClick={() => addScore(0)}>0</button>
+                <button onClick={() => addScore(1)}>1</button>
+                <button onClick={() => addScore(2)}>2</button>
+                <button onClick={() => addScore(3)}>3</button>
+                <button onClick={() => addScore(4)}>4</button>
+                <button onClick={() => addScore(5)}>5</button>
+                <button onClick={() => addScore(6)}>6</button>
+                <button onClick={addWicket}>Wicket</button>
+            </div>
+        );
+
+        const Forms = () => {
+            const handleSubmit = (event) => {
+                event.preventDefault();
+                ballwiseRes.unshift(hit);
+                if (hit !== 'W') {
+                    score += parseInt(hit, 10);
+                } else {
+                    wicket += 1;
+                }
+                hit = '';
+                rootElement.render(<App />);
+            };
+
+            return (
+                <form onSubmit={handleSubmit}>
+                    <input
+                        type="text"
+                        placeholder="Input"
+                        value={hit}
+                        onChange={(e) => (hit = e.target.value)}
+                    />
+                    <input/>
+                    <button type="submit">Submit</button>
+                </form>
+            );
+        };
+
+        const Result = () => (
+            <div className="result">
+                {ballwiseRes.map((res, index) => (
+                    <p key={index}>{res}</p>
+                ))}
+            </div>
+        );
+
+        const App = () => (
+            <>
+                <h1>SCORE KEEPER</h1>
+                <h2>SCORE: {score}/{wicket}</h2>
+                <ScoreButton />
+                <br/>
+                <Forms />
+                <hr/>
+                <Result />
+            </>
+        );
+
+        const rootElement = ReactDOM.createRoot(document.getElementById("root"));
+        rootElement.render(<App />);
+    </script>
+</body>
+</html>
