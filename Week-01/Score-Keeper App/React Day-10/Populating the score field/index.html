@@ -80,6 +80,7 @@
         let wicket = 0;
         let ballwiseRes = [];
         let hit = '';
+        let inputRef=React.createRef()
 
         function addScore(num) {
             hit = num;
@@ -108,12 +109,14 @@
             const handleSubmit = (event) => {
                 event.preventDefault();
                 ballwiseRes.unshift(hit);
+                console.log(inputRef.current.value)
                 if (hit !== 'W') {
                     score += parseInt(hit, 10);
                 } else {
                     wicket += 1;
                 }
                 hit = '';
+
                 rootElement.render(<App />);
             };
 
@@ -125,7 +128,7 @@
                         value={hit}
                         onChange={(e) => (hit = e.target.value)}
                     />
-                    <input/>
+                    <input ref={inputRef} placeholder='Add the comment' />
                     <button type="submit">Submit</button>
                 </form>
             );
