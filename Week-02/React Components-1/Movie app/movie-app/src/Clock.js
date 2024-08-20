@@ -1,7 +1,7 @@
 import { useState } from 'react';
 
  function Clock({ color, time }) {
-  const [currentColor, setCurrentColor] = useState(() => color);
+  const [currentColor] = useState(() => color);
 
   return (
     <h1 style={{ color: currentColor }}>
