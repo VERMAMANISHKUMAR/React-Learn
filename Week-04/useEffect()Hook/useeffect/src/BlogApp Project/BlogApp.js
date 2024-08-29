@@ -20,8 +20,8 @@ const BlogApp = () => {
   };
 
   return (
-    <div className="container mt-5 text-center">
-      <h3 className="mb-4">Add a New Blog</h3>
+    <div className="container mt-5 text-center bg-body-secondary">
+      <h4 className="mb-4">Add a New Blog</h4>
       <div className="form-group">
         <input
           type="text"
@@ -29,8 +29,9 @@ const BlogApp = () => {
           placeholder="Title"
           value={title}
           onChange={(e) => setTitle(e.target.value)}
+          
         />
-        <h3 className="mb-4">Add a New Content</h3>
+        <h4 className="mb-4">Add a New Content</h4>
         <textarea
           className="form-control mb-2"
           placeholder="Content"
