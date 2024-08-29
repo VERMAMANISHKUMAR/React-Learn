@@ -5,6 +5,7 @@ import FetchDataComponent from './Conditional Effects/FetchDataComponent'
 import MultipleEffectsComponent from './Using Multiple useEffect Hooks/MultipleEffectsComponent'
 import UseRef from './UseState,UseEffect,and,UseRef/UseRef'
 import BlogApp from "./BlogApp/BlogApp";
+import Counter from "./UseReducer() Hook/useReducer";
 
 function App() {
 
@@ -25,7 +26,7 @@ function App() {
       <FetchDataComponent />  
     </div>
     <br/>
-    <div style={{textAlign:'center', background:'#f9f9f9'}}>
+    <div style={{textAlign:'center', background:'#f2f'}}>
       <h2>Using Multiple useEffect Hooks</h2>
       <MultipleEffectsComponent />  {/* Correct the component name here */}  
     </div>
@@ -37,6 +38,12 @@ function App() {
      <div style={{textAlign:'center', background:'#f9f9'}}>
       <h2>UseState, UseEffect, and UseRef</h2>
       <UseRef />  {/* Correct the component name here */}
+     </div>
+     <br/>
+     <div style={{textAlign:'center', background:'#f5f'}}>
+      <h2>UseReducer() Hook</h2>  
+      <Counter/>
+
      </div>
      
     </>

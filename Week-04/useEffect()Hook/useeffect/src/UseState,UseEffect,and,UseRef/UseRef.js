@@ -21,10 +21,10 @@ function PreviousValueExample() {
   return (
     <div>
       {/* Displaying the current count value */}
-      <h1>Current Count: {count}</h1>
+      <h2>Current Count: {count}</h2>
       
       {/* Displaying the previous count value */}
-      <h2>Previous Count: {prevCount}</h2>
+      <h3>Previous Count: {prevCount}</h3>
       
       {/* Button to increment the count value by 1 */}
       <button onClick={() => setCount(count + 1)}>Increment</button>
