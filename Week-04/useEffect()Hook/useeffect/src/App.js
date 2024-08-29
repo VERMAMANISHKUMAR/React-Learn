@@ -4,7 +4,7 @@ import TimerComponent from './Effect Hook with Cleanup/TimerComponent'
 import FetchDataComponent from './Conditional Effects/FetchDataComponent'
 import MultipleEffectsComponent from './Using Multiple useEffect Hooks/MultipleEffectsComponent'
 import UseRef from './UseState,UseEffect,and,UseRef/UseRef'
-import BlogApp from "./BlogApp Project/BlogApp";
+import BlogApp from "./BlogApp/BlogApp";
 import Counter from "./UseReducer() Hook/useReducer";
 
 function App() {
